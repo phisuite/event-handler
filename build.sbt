@@ -24,9 +24,11 @@ lazy val root = (project in file("."))
       logback,
       scalaLog,
       scalaTest % Test,
+      googleCommon,
+      googleGRPC % "protobuf",
       scalaPB % "protobuf",
       scalaGRPC,
-      javaGRPC
+      javaGRPC,
     )
   )
 

@@ -10,4 +10,6 @@ object Dependencies {
   lazy val scalaPB = "com.thesamet.scalapb" %% "scalapb-runtime" % scalapbVersion
   lazy val scalaGRPC = "com.thesamet.scalapb" %% "scalapb-runtime-grpc" % scalapbVersion
   lazy val javaGRPC = "io.grpc" % "grpc-netty" % grpcJavaVersion
+  lazy val googleGRPC = "com.google.api.grpc" % "googleapis-common-protos" % "0.0.3"
+  lazy val googleCommon = "com.thesamet.scalapb.common-protos" %% "proto-google-common-protos-scalapb_0.10" % "1.17.0-0"
 }

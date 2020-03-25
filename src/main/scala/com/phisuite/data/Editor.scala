@@ -1,6 +1,6 @@
 package com.phisuite.data
 
-import com.phisuite.data.entity.{Entity, EntityAPIGrpc}
+import com.phisuite.data.entity.{Entity, EntityWriteAPIGrpc}
 import com.typesafe.scalalogging.Logger
 import io.grpc.ManagedChannelBuilder
 
@@ -14,7 +14,7 @@ object Editor {
 
 class Editor private (channel: ManagedChannelBuilder[_]) {
   private val logger = Logger("Editor")
-  private val stub = EntityAPIGrpc.stub(channel.build())
+  private val stub = EntityWriteAPIGrpc.stub(channel.build())
 
   def create(entity: Entity): Future[Entity] = {
     logger.info(s"Create: $entity")

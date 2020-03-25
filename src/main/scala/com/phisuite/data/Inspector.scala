@@ -1,7 +1,7 @@
 package com.phisuite.data
 
 import com.phisuite.data.common.Options
-import com.phisuite.data.entity.{Entity, EntityAPIGrpc}
+import com.phisuite.data.entity.{Entity, EntityReadAPIGrpc}
 import com.typesafe.scalalogging.Logger
 import io.grpc.ManagedChannelBuilder
 import io.grpc.stub.StreamObserver
@@ -14,7 +14,7 @@ object Inspector {
 
 class Inspector private (channel: ManagedChannelBuilder[_]) {
   private val logger = Logger("Inspector")
-  private val stub = EntityAPIGrpc.stub(channel.build())
+  private val stub = EntityReadAPIGrpc.stub(channel.build())
 
   def List(options: Options): Unit = {
     logger.info(s"List entities: $options")
